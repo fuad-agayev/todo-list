@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title> Todo Task </title>
+  <script>
+  tailwind.config = {
+    corePlugins: {
+    transitionProperty: true,
+    transitionTimingFunction: true,
+    transitionDuration: true,
+  },
+    theme: {
+      extend: {
+        colors: {
+          clifford: '#da373d',
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-stone-950">
+<div class="absolute top-[100px] left-1/2 transform -translate-x-64 ml-[-50px]">
+  <h1 class="text-4xl text-zinc-400 font-bold tracking-wide ml-[125px] mt-[25px]"> TODO-TASK-2025 </h1>
+  <div id="new_todo_task" class="mt-[50px] flex justify-between items-center gap-[5px]">
+   <input type="text" name="" id="new_input_task" placeholder="What are you planned today . . ." class="text-lg sm:xl text-slate-500 font-medium pl-[10px] w-[500px] h-[50px] bg-zinc-200 focus:outline-zinc-400 rounded"/>
+   <button id="new_task_button" class="text-white w-[100px] h-[50px] border-2 bg-emerald-400 border-none rounded font-medium text-[15px]"> ADD TASK </button>
+  </div>
+</div>
+
+<div class="absolute top-[10px] left-[34%] z-[999] w-[500px] h-[90px] bg-zinc-100 text-center rounded hidden" id="popup_task">
+    <h4 class="text-orange-500 text-xl mt-[10px] font-bold tracking-widest leading-[1.2]">You must fill a new task area please! </h4>
+    <div class="w-[45px] h-[30px] border-2 border-slate-950 text-lg mt-[15px] ml-[45%] cursor-pointer" id="exit_btn"><i class="fa-solid fa-x"></i></div>
+</div>
+
+<div class="todo-task-list absolute top-[277px] left-1/2 transform -translate-x-64 ml-[-50px]">
+  <h4 class="text-slate-500 text-xl font-bold mt-[25px]"> Tasks You Typed </h4>
+  <div class="mt-[100px]" id="generated_tasks">
+    <!--
+    <div class="all-tasks">
+      <div class="content">
+        <input type="text" class="text" value="My added tasks" readonly />
+      </div>
+      <div class="actions">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </div>
+     -->
+  </div>
+</div>
+
+<div class="absolute top-[10px] left-[34%] z-[999] w-[500px] h-[90px] bg-zinc-100 text-center rounded-lg hidden" id="popup_tasks_confirm">
+  <h4 class="text-zinc-500 text-lg mt-[10px] font-bold tracking-widest leading-[1.2]"> Are you sure you want to remove the lists !</h4>
+  <div class="flex justify-center items-center gap-[10px]">
+    <button class="w-[60px] h-[30px] border-2 border-slate-950 text-lg mt-[10px] cursor-pointer rounded hover:bg-emerald-500 hover:text-slate-50 hover:border-none" id="ok_btn"> OK </button>
+    <button class="w-[60px] h-[30px] border-2 border-slate-950 text-lg mt-[10px] cursor-pointer rounded hover:bg-orange-300 hover:text-slate-50 hover:border-none" id="no_btn"> NO </button>
+  </div>
+</div>
+
+<div class="absolute top-[350px] left-[34%] z-[999] w-[500px] h-[50px] bg-zinc-100 text-center rounded leading-[1.5] mb-[10px] opacity-0 pointer-events-none transition duration-700 ease-in-out" id="popup_tasks_successfull">
+  <h4 class="text-green-500 text-xl mt-[10px] font-bold tracking-widest"> successfully removed ! </h4>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
